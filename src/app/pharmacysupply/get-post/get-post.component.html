@@ -1,0 +1,175 @@
+<!-- <html>
+    <head>
+        <style>
+            label{
+                display: inline-block;
+                /* padding: 3px 6px; */
+                text-align:right;
+                width: 150px;
+                vertical-align:top;
+            }
+            /* button{
+                padding: 7px 14px;
+            } */
+            /* .Text{
+                /* padding: 20px;
+                text-align:left;
+                color:white;
+            } */
+            .form-group{
+                align-items: center;
+                text-align: center;
+            }
+            .col-form-control{
+                vertical-align: middle;
+            }
+            
+        </style>
+    </head>
+
+    
+<body>
+<div class="container row justify-content-center align-items-center">
+    <div class="Text" style="font-weight: 800; color:black;font-size:x-large; ">
+        Enter the Medicine and Demand Details
+    </div>
+
+
+        <div class="form-group " >
+            <form #MedicineDemandForm="ngForm" (ngSubmit)="Adddemand(MedicineDemandForm.value)" >
+             <label class="col-md-2 col-form-label">Medicine</label>
+            
+            <div class="row g-3 ">
+            <div class="col-auto"> 
+                    <label for="Medicine" class="col-form-label" style="font-weight: 700; font-size:large;">Medicine Name:</label>
+                </div>
+                <div class="col-auto">
+                    <input id="Medicine" type="text" class="col-form-control" [(ngModel)]="medicineDemand.medicine" name="Medicine" placeholder="Enter Medicine Name">
+                </div>
+
+
+                
+                <div>
+
+                </div>
+                <div class="col-auto">
+                    <label for="DemandCount" class="form-label" style="font-weight: 700; font-size:large;">Demand Count:</label>
+                </div>
+                <div class="col-auto">
+                    <input id="DemandCount" type="text" class="col-form-control" [(ngModel)]="medicineDemand.demandCount" 
+                    name="DemandCount" placeholder="Enter the Count">
+                </div>
+                <div></div>
+                <div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    &nbsp; &nbsp;
+                    <button  type="reset" class="btn btn-danger">Clear</button>
+                </div>
+            </div>
+        </form>
+        <div class="alert alert-danger mt-2" *ngIf="ErrorMessage">Please Provide Correct Details</div>
+        </div>
+        <br>
+
+
+        <table class="table table-bordered" *ngIf= "AddMessage" > 
+            <thead>
+                <tr>
+                     <th>Id</th>
+                    <th>Pharmacy Name</th>
+                    <th>Medicine Name</th>
+                    <th>Supply Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="success" *ngFor="let dataItem of DemandList1 | slice:-3">
+                    <td>{{dataItem.id}}</td>
+                    <td>{{dataItem.pharmacyName}}</td>
+                    <td>{{dataItem.medicineName}}</td> 
+                    <td>{{dataItem.supplyCount}}</td>
+                </tr>
+            </tbody>
+        </table> 
+
+        
+</div>
+
+</body>
+</html> -->
+
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" 
+        href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
+        </script>
+  <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js">
+        </script>
+</head>
+<body>
+    <div class="container align-items-center text-center" style="color:white">
+     <h1>Medicine</h1>
+    </div>
+<div class="container">
+    <form #MedicineDemandForm="ngForm" (ngSubmit)="Adddemand(MedicineDemandForm.value,MedicineDemandForm)" class="form-horizontal">
+        <div class="form-group has-success"  style="padding-left: 160px;">
+            <label class="control-label col-sm-2" style="color: white;">Medicine Name</label>
+            <div class="col-sm-6">
+                <input class="form-control" type="text" id="Medicine" [(ngModel)]="medicineDemand.medicine" name="Medicine" placeholder="Name of Medicine" required>
+                
+            </div>
+        </div>
+        <div class="form-group has-success" style="padding-left: 160px;">
+            <label class="control-label col-sm-2" style="color: white;">Demand Count</label>
+            <div class="col-sm-6">
+                <input input id="DemandCount" #name = "ngModel" type="text" class="form-control" [(ngModel)]="medicineDemand.demandCount" 
+                name="DemandCount" placeholder="Enter the Count">
+
+            </div>
+        </div>
+        <div class="container align-items-center text-center">
+            <button type="submit" class="btn btn-success">
+                    SUBMIT
+            </button>
+            &nbsp; &nbsp;
+            <br>
+            <br>
+            <div class="alert alert-danger mt-2" *ngIf ="MedicineDemandForm.submitted && ErrorMessage, else tbl1">Please Provide Valid Medicine Demand Details</div>
+        </div>
+    </form>
+    
+</div>
+<ng-template #tbl1>
+    <table class="table table-bordered table-light" *ngIf= "AddMessage" > 
+        <thead class="thead-dark">
+            <tr>
+                <!-- <th>Id</th> -->
+                <th>Pharmacy Name</th>
+                <th>Medicine Name</th>
+                <th>Supply Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="" *ngFor="let dataItem of DemandList1 | slice:-3">
+                <!-- <td>{{dataItem.id}}</td> -->
+                <td>{{dataItem.pharmacyName}}</td>
+                <td>{{dataItem.medicineName}}</td> 
+                <td>{{dataItem.supplyCount}}</td>
+            </tr>
+        </tbody>
+    </table> 
+</ng-template>
+</body>
+</html>

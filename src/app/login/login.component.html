@@ -1,0 +1,26 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100 gradient-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="bg-transparent text-white" style="border-radius: 1rem;">
+            <div class="p-5 text-center">
+              <div class="mb-md-5 mt-md-4 pb-5">
+                <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)">  
+                <h2 class="fw-bold mb-2">Welcome</h2>
+                <p class="text-white-70 mb-5">Pharmacy Medicine Supply Management System</p>
+                <div class="form-outline form-white mb-4">
+                  <input type="name" name="UserName" ngModel id="typeEmailX" class="form-control form-control-lg" placeholder="Username" />
+                </div>
+                <div class="form-outline form-white mb-4">
+                  <input type="password" name="Password" ngModel id="typePasswordX" class="form-control form-control-lg" placeholder="Password"/>
+                  <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password</div>
+                </div>
+                <button class="shadow bg-info border border-dark btn fw-bold text-white btn-lg px-5" type="submit">Login</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

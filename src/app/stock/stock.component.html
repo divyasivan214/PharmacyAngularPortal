@@ -1,0 +1,35 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        
+    
+<h2 class="text-center">Medicine Stock</h2>
+<br>
+<br>
+
+
+<table class="table table-light">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Chemical Composition</th>
+            <th>Target Ailment</th>
+            <th>Date of Expiry</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of StockAvailable">
+            <td>{{dataItem.name}}</td>
+            <td>{{dataItem.chemicalComposition}}</td>
+            <td>{{dataItem.targetAilment}}</td>
+            <td>{{dataItem.dateOfExpiry|date:"d-MMM-YYYY"}}</td>
+            <td>{{dataItem.numberOfTabletsInStock}}</td>
+
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

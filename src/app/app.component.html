@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body{
+      background-color:gray;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default" *ngIf="isUserAuthenticated()" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand text-dark" href="home" style="font-weight:bold;">Pharmacy Management Supply Portal</a>
+      
+    </div>
+    <ul class="nav navbar-nav navbar-expand-lg">
+
+      <li><a href="RepSchedule" style="font-weight:bold;">Representative Schedule</a></li>
+      <li><a href="PharmacySupply" style="font-weight:bold;">Pharmacy Supply</a></li>
+      <li><a href="MedicineStockInformation" style="font-weight:bold;">Medicine Stock</a></li>
+      <li style="padding-top: 5px;">
+          <button 
+              *ngIf="isUserAuthenticated()" class="nav-item" (click)="logOut()" 
+              class="logout m-1 btn btn-debug btn-outline-primary" style="font-weight:bold;">LogOut</button> 
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<router-outlet></router-outlet>
+
+
+</body>
+</html>

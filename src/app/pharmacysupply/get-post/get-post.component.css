@@ -1,0 +1,33 @@
+/* html{
+    height: 100%;
+} */
+body{
+    /* height: 100%; */
+    background-size: cover;
+    background-color: transparent;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th{
+    text-align: center;
+  }
+  td{
+    text-align: center;
+    font-weight: bold;
+  }
+  /* [type="submit"]:hover { background:white;
+    background-color: white;
+   } */
+.btn{
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+
+
+
+
+  font-size:20px;
+
+  /* transition: all 0.3s; */
+  font-weight:700;
+}  

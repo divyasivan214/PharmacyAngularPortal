@@ -1,0 +1,41 @@
+<html>
+    <body>
+        <div class="container align-items-center">
+            <h3 style="text-align: center;">     Medical Representative Schedule</h3>
+            <form #ScheduleForm="ngForm" (ngSubmit)="sendResponse(ScheduleForm)" class="container align-items-center text-center">      
+                <label style="font-weight: bold; font-size: 25px; color: black;">Start Date</label>
+                <br>
+                <input name="name" type="date" min="2021-10-22" class="feedback-input" placeholder="Start Date" [(ngModel)]="StartDate" required/>   
+                <br>
+                <input class="btn btn-success btn-lg" type="submit" value="SUBMIT"  />
+                <br>
+                <br>
+                <div class="alert alert-danger mt-2" *ngIf ="ScheduleForm.submitted && ErrorMessage; else tbl2">Please Provide Start Date</div>
+            </form>
+            <ng-template #tbl2>
+                <table class="table table-light">
+                    <thead class="thead-dark">
+                    <tr class="tbl" >
+                        <th>Representative Name</th>
+                        <th>Doctor Name</th>
+                        <th>Treating Ailment</th>
+                        <th>Medicine</th>
+                        <th>Meeting Slot</th>
+                        <th>Date Of Meeting</th>
+                        <th>Doctor Contact</th>
+                    </tr>
+                </thead>
+                    <tr *ngFor="let schedule of response">
+                        <td>{{schedule.name}}</td>
+                        <td>{{schedule.doctorName}}</td>
+                        <td>{{schedule.treatingAilment}}</td>
+                        <td>{{schedule.medicineName}}</td>
+                        <td>{{schedule.meetingSlot}}</td>
+                        <td>{{schedule.dateOfMeeting|date:"d-MMM-YYYY"}}</td>
+                        <td>{{schedule.doctorContactNumber}}</td>
+                    </tr>
+                </table>
+            </ng-template>
+        </div>
+    </body>
+</html>

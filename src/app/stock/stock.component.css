@@ -1,0 +1,43 @@
+.divider {
+    width: 40px;
+    height: 5px;
+    background: #e12454;
+  }
+
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    font-family: "Exo", sans-serif;
+    font-weight: 700;
+    color: #222;
+  }
+  
+  h1, .h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2, .h2 {
+    font-size: 44px;
+  }
+
+  .section-title h2 {
+    color: #223a66;
+  }
+
+  .my-pagination /deep/ .ngx-pagination .current {
+    background: red;
+  }
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  td{
+  text-align: center;
+  font-weight: bold;
+}
+th{
+  text-align: center;
+}
+body{
+  /* height: 100%; */
+  background-size: cover;
+  background-color: transparent;
+}

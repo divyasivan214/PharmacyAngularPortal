@@ -1,0 +1,67 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+/*body { background:rgb(30,30,40); }*/
+/* html{
+  height: 100%;
+} */
+body{
+  /* height:100%; */
+  background-color: transparent;
+}
+
+.feedback-input {
+  color:black;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight:500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border:2px solid black;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width:30%;
+  box-sizing: border-box;
+  outline:0;
+}
+h3{
+    text-align: center;
+    margin-top: 30px;
+    background-color: transparent;
+    color: black;
+
+}
+/* .tbl{
+    background-color:rgb(125,249,255) ;
+} */
+.feedback-input:focus { border:2px solid white; }
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+
+  /* background:rgb(125,249,255); */
+
+
+  color:white;
+  font-size:20px;
+
+  transition: all 0.3s;
+  margin-top:-4px;
+  font-weight:700;
+}
+[type="submit"]:hover { background:white;
+  color: black;
+ }
+
+td{
+  /* background-color: grey; */
+  text-align: center;
+  font-weight: bold;
+}
+th{
+  text-align: center;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
